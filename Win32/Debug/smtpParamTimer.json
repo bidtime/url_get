@@ -1,0 +1,18 @@
+﻿{
+    "FTimerEnabled": true,
+    "FTimerIterv": 2000,
+    "FTimerIterv_try": 10000,
+    "FNeedConnect": true,
+    "FTimeTryNums": 5,
+    "SMTP_Username": "ecarpo_bms@126.com",
+    "SMTP_Password": "",
+    "SMTP_Host": "smtp.126.com",
+    "SMTP_Port": 25,
+    "SMTP_UseSSL": true,
+    "SMTP_SSL_Port": 465,
+    "SMTP_AuthCode": "",
+    "SMTP_ToUser": "373226941@qq.com",
+    "SMTP_AuthLogin": true,
+    "SMTP_UseAuthCode": true,
+    "SMTP_ConnectTimeout": 30000
+}
