@@ -1,8 +1,8 @@
-﻿{
+{
     "FTimerEnabled": true,
     "FTimerIterv": 60000,
     "FTimerIterv_try": 60000,
     "FNeedConnect": true,
-    "FServerUrl": "http://47.92.90.248:16788/ormrpc/services",
+    "FServerUrl": "http://147.192.190.148:16788/ormrpc/services",
     "FShowRespText": false
 }
