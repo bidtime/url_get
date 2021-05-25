@@ -26,9 +26,10 @@ uses
   uInstanceService in 'src\utils\uInstanceService.pas',
   uFrmAboutBox in 'src\frm\uFrmAboutBox.pas' {FrmAboutBox},
   uVerInfo in 'src\utils\uVerInfo.pas',
-  uSMTPParamTimer in 'src\utils\uSMTPParamTimer.pas',
+  uSMTPInst in 'src\utils\uSMTPInst.pas',
   uDESCrypt in 'src\utils\uDESCrypt.pas',
-  uSMTPUtils in 'src\utils\uSMTPUtils.pas';
+  uSMTPUtils in 'src\utils\uSMTPUtils.pas',
+  uSMTPParamTimer in 'src\utils\uSMTPParamTimer.pas';
 
 {$R *.RES}
 

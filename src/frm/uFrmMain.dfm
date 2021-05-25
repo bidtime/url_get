@@ -8,7 +8,7 @@ object frmMain: TfrmMain
   Font.Charset = GB2312_CHARSET
   Font.Color = clWindowText
   Font.Height = -13
-  Font.Name = '@'#23435#20307
+  Font.Name = #23435#20307
   Font.Style = []
   Menu = MainMenu1
   OldCreateOrder = False
@@ -136,6 +136,15 @@ object frmMain: TfrmMain
       Caption = 'send'
       TabOrder = 2
       OnClick = Button2Click
+    end
+    object Button3: TButton
+      Left = 647
+      Top = 0
+      Width = 75
+      Height = 22
+      Caption = 'Button3'
+      TabOrder = 3
+      OnClick = Button3Click
     end
   end
   object memoLogs: TMemo

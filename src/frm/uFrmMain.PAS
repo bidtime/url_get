@@ -59,6 +59,7 @@ type
     miClose: TMenuItem;
     Button2: TButton;
     ToolButton11: TToolButton;
+    Button3: TButton;
     procedure FileNew1Execute(Sender: TObject);
     procedure FileOpen1Execute(Sender: TObject);
     procedure FileSave1Execute(Sender: TObject);
@@ -75,6 +76,7 @@ type
     procedure miCloseClick(Sender: TObject);
     procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
     procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
   private
     FClosing: Boolean;
     //FProgmanOpen: Boolean;
@@ -178,6 +180,11 @@ begin
   //self.OnSendMail('no connect');
 end;
 
+procedure TfrmMain.Button3Click(Sender: TObject);
+begin
+  self.infoHintS('hello:' + FormatDateTime('yyyy-mm-dd hh:nn:ss', now));
+end;
+
 procedure TfrmMain.ShowStatus(const S: string);
 var str: string;
 begin
@@ -258,12 +265,12 @@ begin
   FHttpParamTimer.initial;
   FHttpParamTimer.get();
   //
-  FSMTPParamTimer.StatusEv := showStatus;
-  FSMTPParamTimer.LogsEv := addLog;
-  FSMTPParamTimer.ErrorEv := addError;
-  FSMTPParamTimer.PopError := self.errorHintS;
-  FSMTPParamTimer.PopInfo := self.infoHints;
-  FSMTPParamTimer.initial;
+  FSMTPParamTimer.SmtpInst.StatusEv := showStatus;
+  FSMTPParamTimer.SmtpInst.LogsEv := addLog;
+  FSMTPParamTimer.SmtpInst.ErrorEv := addError;
+  //FSMTPParamTimer.SmtpInst.PopError := self.errorHintS;
+  //FSMTPParamTimer.SmtpInst.PopInfo := self.infoHints;
+  FSMTPParamTimer.SmtpInst.initial;
 end;
 
 procedure TfrmMain.FormDestroy(Sender: TObject);

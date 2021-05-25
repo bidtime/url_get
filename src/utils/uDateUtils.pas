@@ -17,6 +17,10 @@ type
     class function duringNow(const dtStart: TDateTime): string; overload;
     class function duringNow(const nStart: LongWord): string; overload;
     class function getTickCt(): LongWord;
+    class function DateToTimeStamp(const dt: TDateTime): Int64; static;
+    class function DateToTimeStampS(const dt: TDateTime): string; static;
+    class function fmtDateTime(const dt: TDateTime): string; static;
+    class function UnixDateToDateTime(const USec: Longint): TDateTime; static;
   end;
 
 implementation
@@ -98,6 +102,37 @@ end;
 class function TDateUtils.getTickCt: LongWord;
 begin
   Result := getTickCount;
+end;
+
+// 日期转换成时间戳
+
+class function TDateUtils.DateToTimeStamp(const dt: TDateTime): Int64;
+begin
+ Result := DateTimeToUnix(IncHour(dt, -8)); //  本地时间减8小时
+end;
+
+//function Gettimestamp: long;
+//begin
+// Result := DateTimeToUnix(IncHour(Now,-8)); //  本地时间减8小时
+//end;
+
+//时间戳转换成日期
+
+class function TDateUtils.UnixDateToDateTime(const USec: Longint): TDateTime;
+const UnixStartDate: TDateTime = 25569.0; // 1970/01/01
+begin
+  Result:= (Usec / 86400) + UnixStartDate;
+  Result:= IncHour(Result,8);
+end;
+
+class function TDateUtils.DateToTimeStampS(const dt: TDateTime): string;
+begin
+ Result := inttostr(DateToTimeStamp(dt)); //  本地时间减8小时
+end;
+
+class function TDateUtils.fmtDateTime(const dt: TDateTime): string;
+begin
+  Result := formatdatetime('yyyy-mm-dd hh:nn:ss ZZZ', dt);
 end;
 
 end.
